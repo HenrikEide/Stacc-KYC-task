@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/api/name")
 def test():
-    return "Is this even working"
+    page = request.args.get("name")
+    return f"please work {page}"
