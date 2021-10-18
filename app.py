@@ -1,14 +1,20 @@
 from flask import Flask, request
 from flask.templating import render_template
-from kycRequests import pep_check
+from kycRequests import pep_check, pep_check_company
 
 app = Flask(__name__)
 
 @app.route("/api/name")
-def test():
+def pepName():
     page = request.args.get("name")
-    result = pep_check(page)
-    return result
+    return pep_check(page)
+    
+
+@app.route("/api/company")
+def pepCompany():
+    page = request.args.get("orgNr")
+    return pep_check_company(page)
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
