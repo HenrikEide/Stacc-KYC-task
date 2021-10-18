@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask.templating import render_template
 from kycRequests import pep_check, pep_check_company
 
+
 app = Flask(__name__)
 
 @app.route("/api/name")
@@ -10,7 +11,7 @@ def pepName():
     return pep_check(page)
     
 
-@app.route("/api/company")
+@app.route("/api/company", methods=["GET", "POST"])
 def pepCompany():
     page = request.args.get("orgNr")
     return pep_check_company(page)
