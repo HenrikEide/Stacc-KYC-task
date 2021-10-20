@@ -5,7 +5,7 @@ This is my solution to the code challenge PEP check task.
 My solution has the following features:  
 - PEP check and api on individual
 - PEP check and api on company
-- Deployed on stacc-kyc-task.herokuapp.com (currently not working)  
+- Deployed on stacc-kyc-task.herokuapp.com (First successful deploy at the time of this commit!)  
 
 
 ## Requirements:
